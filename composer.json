@@ -1,0 +1,54 @@
+{
+  "name": "victord11/ssl-certification-health-check",
+  "description": "A Laravel Health check to SSL certification",
+  "keywords": [
+    "victord11",
+    "laravel",
+    "spatie",
+    "ssl-certification-health-check"
+  ],
+  "homepage": "https://github.com/victord11/ssl-certification-health-check",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Viktor Mazur",
+      "email": "victord11@ukr.net",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "spatie/ssl-certificate": "^2.1"
+  },
+  "require-dev": {
+    "nunomaduro/collision": "^5.10",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-laravel": "^1.1",
+    "phpstan/extension-installer": "^1.1",
+    "phpstan/phpstan-deprecation-rules": "^1.0",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "phpunit/phpunit": "^9.5",
+    "spatie/laravel-health": "^1.2",
+    "friendsofphp/php-cs-fixer": "^3.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "VictoRD11\\SslCertificationHealthCheck\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "VictoRD11\\SslCertificationHealthCheck\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
