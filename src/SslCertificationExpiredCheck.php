@@ -9,7 +9,7 @@ use Spatie\Health\Checks\Result;
 use Spatie\SslCertificate\SslCertificate;
 use VictoRD11\SslCertificationHealthCheck\Exceptions\InvalidUrl;
 
-class SslCertificationCheck extends Check
+class SslCertificationExpiredCheck extends Check
 {
     public ?string $url = null;
     protected int $warningThreshold = 20;
