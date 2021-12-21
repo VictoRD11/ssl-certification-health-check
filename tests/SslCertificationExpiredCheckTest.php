@@ -28,7 +28,7 @@ it('certification is expired with warning', function () {
 it('certification is expired with fail', function () {
     $result = SslCertificationExpiredCheck::new()
         ->url('google.com')
-        ->faiWhenSslCertificationExpiringDay(9999)
+        ->failWhenSslCertificationExpiringDay(9999)
         ->run();
 
     expect($result->status)->toBe(Status::failed());

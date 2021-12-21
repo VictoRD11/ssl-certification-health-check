@@ -16,7 +16,7 @@ use VictoRD11\SslCertificationHealthCheck\SslCertificationExpiredCheck;
 use VictoRD11\SslCertificationHealthCheck\SslCertificationValidCheck;
 
 Health::checks([
-    SslCertificationExpiredCheck::new()->url('google.com')->warnWhenSslCertificationExpiringDay(24)->faiWhenSslCertificationExpiringDay(14),
+    SslCertificationExpiredCheck::new()->url('google.com')->warnWhenSslCertificationExpiringDay(24)->failWhenSslCertificationExpiringDay(14),
     SslCertificationValidCheck::new()->url('google.com'),
 ]);
 ```
