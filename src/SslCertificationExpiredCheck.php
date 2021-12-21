@@ -32,7 +32,7 @@ class SslCertificationExpiredCheck extends Check
      *
      * @return $this
      */
-    public function faiWhenSslCertificationExpiringDay(int $day): self
+    public function failWhenSslCertificationExpiringDay(int $day): self
     {
         $this->errorThreshold = $day;
 
