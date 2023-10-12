@@ -16,7 +16,7 @@ it('certification is not expired', function () {
     expect($result->status)->toBe(Status::ok());
 });
 
-it('certification is expired with warning', function () {
+it('certification will expire with warning', function () {
     $result = SslCertificationExpiredCheck::new()
         ->url('google.com')
         ->warnWhenSslCertificationExpiringDay(9999)
@@ -25,10 +25,18 @@ it('certification is expired with warning', function () {
     expect($result->status)->toBe(Status::warning());
 });
 
-it('certification is expired with fail', function () {
+it('certification will expire with fail', function () {
     $result = SslCertificationExpiredCheck::new()
         ->url('google.com')
         ->failWhenSslCertificationExpiringDay(9999)
+        ->run();
+
+    expect($result->status)->toBe(Status::failed());
+});
+
+it('certification is expired with fail', function () {
+    $result = SslCertificationExpiredCheck::new()
+        ->url('expired.badssl.com')
         ->run();
 
     expect($result->status)->toBe(Status::failed());

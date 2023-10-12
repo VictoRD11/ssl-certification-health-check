@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace VictoRD11\SslCertificationHealthCheck;
 
+use Carbon\Carbon;
 use Spatie\Health\Checks\Check;
 use Spatie\Health\Checks\Result;
 use Spatie\SslCertificate\SslCertificate;
@@ -60,8 +61,8 @@ class SslCertificationExpiredCheck extends Check
             throw InvalidUrl::make();
         }
 
-        $certificate = SslCertificate::createForHostName($this->url);
-        $daysUntilExpired = $certificate->expirationDate()->diffInDays();
+        $certificate = SslCertificate::createForHostName($this->url, 30, false);
+        $daysUntilExpired = Carbon::now()->diffInDays($certificate->expirationDate(), false);
 
         $result = Result::make()
             ->meta(['days_until_expired' => $daysUntilExpired])
