@@ -62,7 +62,7 @@ class SslCertificationExpiredCheck extends Check
         }
 
         $certificate = SslCertificate::createForHostName($this->url, 30, false);
-        $daysUntilExpired = Carbon::now()->diffInDays($certificate->expirationDate(), false);
+        $daysUntilExpired = $certificate->daysUntilExpirationDate();
 
         $result = Result::make()
             ->meta(['days_until_expired' => $daysUntilExpired])
