@@ -22,12 +22,12 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.4",
-    "pestphp/pest": "^2.12",
-    "pestphp/pest-plugin-laravel": "^2.3",
+    "pestphp/pest": "^1.23|^2.12",
+    "pestphp/pest-plugin-laravel": "^1.4|^2.3",
     "phpstan/extension-installer": "^1.1",
     "phpstan/phpstan-deprecation-rules": "^1.0",
     "phpstan/phpstan-phpunit": "^1.0",
-    "spatie/laravel-health": "^1.2"
+    "spatie/laravel-health": "^1.27"
   },
   "autoload": {
     "psr-4": {
