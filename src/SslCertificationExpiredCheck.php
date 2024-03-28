@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace VictoRD11\SslCertificationHealthCheck;
 
-use Carbon\Carbon;
 use Spatie\Health\Checks\Check;
 use Spatie\Health\Checks\Result;
 use Spatie\SslCertificate\SslCertificate;
@@ -62,13 +61,13 @@ class SslCertificationExpiredCheck extends Check
         }
 
         $certificate = SslCertificate::createForHostName($this->url, 30, false);
-        $daysUntilExpired = Carbon::now()->diffInDays($certificate->expirationDate(), false);
+        $daysUntilExpired = $certificate->daysUntilExpirationDate();
 
         $result = Result::make()
             ->meta(['days_until_expired' => $daysUntilExpired])
             ->shortSummary($daysUntilExpired . ' days until');
 
-        if ($daysUntilExpired < 0) {
+        if ($certificate->isExpired()) {
             return $result->failed('The certificate has expired');
         }
 

@@ -44,11 +44,15 @@
   "scripts": {
     "analyse": "vendor/bin/phpstan analyse",
     "test": "vendor/bin/pest",
-    "test-coverage": "vendor/bin/pest coverage",
+    "test-coverage": "vendor/bin/pest --coverage",
     "cs-fixer": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist.php --allow-risky=yes"
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true
