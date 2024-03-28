@@ -2,6 +2,14 @@
 
 All notable changes to `:package_name` will be documented in this file.
 
+## 1.0.5 - 2024-03-28
+
+### What's Changed
+
+* Change Readme by @VictoRD11 in https://github.com/VictoRD11/ssl-certification-health-check/pull/7
+
+**Full Changelog**: https://github.com/VictoRD11/ssl-certification-health-check/compare/1.0.4...1.0.5
+
 ## 1.0.4 - 2024-03-28
 
 ### What's Changed
